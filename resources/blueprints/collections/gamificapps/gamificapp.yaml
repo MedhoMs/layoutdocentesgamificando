@@ -1,0 +1,70 @@
+title: Gamificapps
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: app_image
+            field:
+              container: assets
+              type: assets
+              display: 'App Image'
+              max_files: 1
+              min_files: 1
+          -
+            handle: description
+            field:
+              type: text
+              display: Description
+          -
+            handle: external_link
+            field:
+              input_type: url
+              type: text
+              display: 'External Link'
+          -
+            handle: video_1
+            field:
+              type: video
+              display: 'Video 1'
+              width: 50
+          -
+            handle: video_2
+            field:
+              type: video
+              display: 'Video 2'
+              width: 50
+          -
+            handle: author
+            field:
+              type: users
+              display: Author
+              default: current
+              localizable: true
+              max_items: 1
+          -
+            handle: template
+            field:
+              type: template
+              display: Template
+              localizable: true
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

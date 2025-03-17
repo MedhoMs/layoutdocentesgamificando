@@ -1,0 +1,97 @@
+title: Contest
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: contest_image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: 'Contest Image'
+          -
+            handle: description
+            field:
+              type: text
+              display: Description
+          -
+            handle: autoria
+            field:
+              type: text
+              display: Autoría
+              width: 33
+          -
+            handle: otras_atribuciones
+            field:
+              type: text
+              display: 'Otras Atribuciones'
+              width: 33
+          -
+            handle: nivel
+            field:
+              type: text
+              display: Nivel
+              width: 33
+          -
+            handle: contenidos
+            field:
+              type: markdown
+              display: Contenidos
+          -
+            handle: consideraciones
+            field:
+              type: markdown
+              display: Consideraciones
+          -
+            handle: genially
+            field:
+              type: textarea
+              display: Genially
+          -
+            handle: author
+            field:
+              type: users
+              display: Author
+          -
+            handle: template
+            field:
+              type: template
+              display: Template
+              localizable: true
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: tags
+            field:
+              type: terms
+              taxonomies:
+                - tags
+              display: Tags
+              mode: select
+          -
+            handle: language_tags
+            field:
+              type: terms
+              taxonomies:
+                - language_tags
+              display: 'Language Tags'
+              mode: select

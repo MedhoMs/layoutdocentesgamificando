@@ -1,0 +1,119 @@
+title: 'Principal Screen'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: subtitle
+            field:
+              type: text
+              display: Subtitle
+          -
+            handle: group_image
+            field:
+              container: assets
+              type: assets
+              display: 'Group Image'
+          -
+            handle: welcome
+            field:
+              type: markdown
+              display: Welcome
+              width: 33
+          -
+            handle: new_logo
+            field:
+              container: assets
+              type: assets
+              display: 'New Logo'
+              width: 33
+          -
+            handle: old_logo
+            field:
+              container: assets
+              type: assets
+              display: 'Old Logo'
+              width: 33
+          -
+            handle: first_section_title
+            field:
+              type: text
+              display: 'First Section Title'
+              width: 50
+          -
+            handle: first_section
+            field:
+              type: markdown
+              display: 'First Section'
+              width: 50
+          -
+            handle: image_first_section
+            field:
+              container: assets
+              type: assets
+              display: 'Image First Section'
+              width: 50
+          -
+            handle: latest_posts
+            field:
+              type: text
+              display: 'Latest Posts'
+          -
+            handle: image_second_section
+            field:
+              container: assets
+              type: assets
+              display: 'Image Second Section'
+              width: 50
+          -
+            handle: second_section
+            field:
+              type: markdown
+              display: 'Second Section'
+              width: 50
+          -
+            handle: bottom_text_2
+            field:
+              type: text
+              display: 'Bottom Text 2'
+              width: 50
+          -
+            handle: bottom_text_1
+            field:
+              type: text
+              display: 'Bottom Text 1'
+              width: 50
+          -
+            handle: author
+            field:
+              type: users
+              display: Author
+              default: current
+              localizable: true
+              max_items: 1
+          -
+            handle: template
+            field:
+              type: template
+              display: Template
+              localizable: true
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

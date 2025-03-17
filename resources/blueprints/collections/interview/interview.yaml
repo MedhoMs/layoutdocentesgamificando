@@ -1,0 +1,77 @@
+title: Interview
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: interview_image
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: 'Interview Image'
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: description
+            field:
+              type: text
+              display: Description
+          -
+            handle: about
+            field:
+              type: text
+              display: About
+          -
+            handle: video
+            field:
+              type: video
+              display: Video
+          -
+            handle: template
+            field:
+              type: template
+              display: Template
+              localizable: true
+          -
+            handle: summary
+            field:
+              type: markdown
+              display: Summary
+      -
+        display: Speakers
+        fields:
+          -
+            handle: speakers
+            field:
+              collections:
+                - team
+              type: entries
+              display: Speakers
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - interview
+              max_items: 1
+              listable: false
+              localizable: true

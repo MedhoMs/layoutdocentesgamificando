@@ -1,0 +1,13 @@
+tree:
+  -
+    id: 71469385-573e-40cb-82bf-ef7f8ba7d9d4
+    title: Home
+    url: 'http://statamicdocentes.test'
+  -
+    id: 417d676f-114d-4510-9291-f313ce36dd3d
+    title: Team
+    url: 'http://statamicdocentes.test/team'
+  -
+    id: fa25337a-e38f-4bf9-aad6-608469e10d3b
+    title: Interviews
+    url: 'http://statamicdocentes.test/interviews'

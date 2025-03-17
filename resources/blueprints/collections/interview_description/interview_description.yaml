@@ -1,0 +1,53 @@
+title: 'Interview Description'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: description
+            field:
+              type: text
+              display: Description
+          -
+            handle: speaker_1
+            field:
+              type: text
+              display: 'Speaker 1'
+              width: 50
+          -
+            handle: speaker_2
+            field:
+              type: text
+              display: 'Speaker 2'
+              width: 50
+          -
+            handle: video
+            field:
+              type: video
+              display: Video
+          -
+            handle: template
+            field:
+              type: template
+              display: Template
+              localizable: true
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'

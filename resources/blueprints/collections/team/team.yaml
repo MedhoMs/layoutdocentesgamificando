@@ -1,0 +1,114 @@
+title: Team
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              display: Name
+          -
+            handle: job
+            field:
+              type: text
+              display: Job
+              width: 50
+          -
+            handle: description
+            field:
+              type: text
+              display: Description
+              width: 50
+          -
+            handle: avatar
+            field:
+              max_files: 1
+              container: assets
+              type: assets
+              display: Avatar
+          -
+            handle: template
+            field:
+              type: template
+              display: Template
+              localizable: true
+      -
+        display: Links
+        fields:
+          -
+            handle: instagram
+            field:
+              input_type: url
+              type: text
+              display: Instagram
+          -
+            handle: twitter
+            field:
+              input_type: url
+              type: text
+              display: Twitter
+          -
+            handle: youtube
+            field:
+              input_type: url
+              type: text
+              display: Youtube
+          -
+            handle: facebook
+            field:
+              input_type: url
+              type: text
+              display: Facebook
+          -
+            handle: website
+            field:
+              input_type: url
+              type: text
+              display: Website
+          -
+            handle: mail
+            field:
+              input_type: email
+              type: text
+              display: Mail
+          -
+            handle: pinterest
+            field:
+              type: text
+              display: Pinterest
+          -
+            handle: linkedin
+            field:
+              type: text
+              display: Linkedin
+          -
+            handle: twitch
+            field:
+              type: text
+              display: Twitch
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - team
+              max_items: 1
+              listable: false
+              localizable: true

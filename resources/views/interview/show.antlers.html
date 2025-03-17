@@ -1,0 +1,52 @@
+<div class="flex flex-col items-center text-4xl bg-[#11375f] py-6 text-white font-bold">
+    {{ title }}
+    <div class="pt-6">
+        {{ if tags }}
+            {{ tags }}
+                <a href="/tags/{{ slug }}" class="border-2 border-black rounded-2xl text-2xl bg-[#ff7414] hover:bg-[#cd5e12] px-2 py-1">{{ title }}</a>
+            {{ /tags }}
+        {{ /if }}
+    </div>
+</div>
+<div>
+    <div class="bg-gradient-to-b from-[#29bfff] to-white">
+        <div class="max-w-4xl mx-auto font-semibold py-5 text-left px-4 lg:px-0">
+            {{ about }}
+        </div>
+        <!--PONENTES
+        <h3 class="font-semibold max-w-4xl mx-auto px-4 lg:px-0">Ponentes:</h3>
+        <div class="flex flex-col max-w-4xl mx-auto px-4 lg:px-0">
+            <div class="flex flex-col gap-5">
+                <div class="flex items-center">
+                    <h1>Carlos</h1>
+                </div>
+                <div class="flex items-center">
+                    <h1>Miguel</h1>
+                </div>
+            </div>
+        </div>
+        PONENTES-->
+    <hr><hr>
+    <div>
+        <div class="max-w-4xl mx-auto">
+            <iframe width="905" height="536" class="hidden md:block" src="{{ video | embed_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <div class="flex justify-center">
+                <iframe width="380" height="336" class="md:hidden" src="{{ video | embed_url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="max-w-4xl mx-auto mt-2 mb-10">
+            <div class="prose lg:prose-xl">
+                {{ summary }}
+            </div>
+        </div>
+        <div class="grid grid-cols-3 max-w-3xl mx-auto gap-4 mb-7 pt-10">
+            {{ collection:interview limit="3" }}
+            <div>
+                <a href="{{ url }}">
+                    <img src="{{ interview_image }}" class="rounded-lg">
+                </a>
+            </div>
+            {{ /collection:interview }}
+        </div>
+    </div>
+</div>

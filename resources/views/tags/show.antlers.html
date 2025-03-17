@@ -1,0 +1,39 @@
+<div>
+    <div class="flex justify-center gap-4 pt-4 font-bold">
+        {{ taxonomy:tags }}
+            <a href="{{ url }}" class="border-2 border-black rounded-2xl text-white hover:text-[#e2e2e2] bg-[#ff7414] hover:bg-[#cd5e12] px-2 py-1">{{ title }}</a>
+        {{ /taxonomy:tags }}
+    </div>
+    {{ entries }}
+        <div class="flex gap-4 p-8">
+            {{ if collection == "contest" }}
+            <div>
+                <a href="{{ url }}" class="flex items-center text-[#1681f5] hover:underline hover: gap-4">
+                    <img src="{{ contest_image }}" class=" w-44 h-44 object-contain aspect-square">
+                    <div class="font-bold text-3xl">
+                        <h1 class="before:content-['·']"> Concursos: {{ title }}</h1>
+                    </div>
+                </a>
+            </div>
+            {{ elseif collection == "gamificapps" }}
+            <div>
+                <a href="{{ url }}" class="flex items-center text-[#1681f5] hover:underline hover: gap-4">
+                    <img src="{{ app_image }}" class=" w-44 h-44 object-contain aspect-square">
+                    <div class="font-bold text-3xl">
+                        <h1 class="before:content-['·']"> GamificApps: {{ title }}</h1>
+                    </div>
+                </a>
+            </div>
+            {{ elseif collection == "interview" }}
+            <div>
+                <a href="{{ url }}" class="flex items-center text-[#1681f5] hover:underline hover: gap-4">
+                    <img src="{{ interview_image }}" class=" w-48 h-48 object-contain aspect-square">
+                    <div class="font-bold text-3xl">
+                        <h1 class="before:content-['·']"> Entrevistas: {{ title }}</h1>
+                    </div>
+                </a>
+            </div>
+            {{ /if }}
+        </div>
+    {{ /entries }}
+</div>

@@ -1,0 +1,30 @@
+<div class="pb-8">
+    <div class="flex items-center flex-col pt-4 bg-[#1681f5] text-white font-bold">
+      <h1 class="text-3xl pb-3">Concursos</h1>
+    </div>
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-7">
+            {{ collection:contest }}
+            <div class="bg-gray-100 border-b-2 py-8">
+              
+                <div class="font-bold text-lg text-blue-500 pb-3">
+                  {{ title }}
+                  {{ if tags }}
+                    {{ tags }}
+                      <a href="/tags/{{ slug }}" class="border-2 border-black text-sm rounded-2xl text-white hover:text-[#e2e2e2] bg-[#ff7414] hover:bg-[#cd5e12] transition-all ease-in-out px-2 py-1">{{ title }}</a>
+                    {{ /tags }}
+                  {{ /if }}
+                </div>
+
+                <img src="{{ contest_image }}" class="w-full h-auto">
+
+                <div class="pt-3">
+                  {{ description }}
+                </div>
+
+                <a href="{{ url }}" class="mt-8 inline-block bg-blue-500 text-white px-6 py-1 rounded-full hover:bg-blue-600 transition-all ease-in-out">Leer más>></a>
+            </div>
+            {{ /collection:contest }}
+        </div>
+    </div>
+</div>

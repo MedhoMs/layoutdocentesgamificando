@@ -1,0 +1,14 @@
+<div class="max-w-4xl mx-auto">
+    <h1 class="text-7xl font-black py-5">Resultados de "{{ get:q }}"</h1>
+    {{ search:results as="results" }}
+        {{ if no_results }}
+            <h2 class="font-bold text-4xl pb-5 text-center">No hay resultados.</h2>
+        {{ else }}
+            <ul class="space-y-4 pb-5">
+                {{ results }}
+                <li><a href="{{ url }}" class="font-bold hover:text-blue-500">➜ {{ title }}</a></li>
+                {{ /results }}
+            </ul>
+        {{ /if }}
+    {{ /search:results }}
+</div>

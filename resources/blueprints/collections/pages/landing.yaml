@@ -1,0 +1,144 @@
+title: Landing
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: subtitle
+            field:
+              type: text
+              display: Subtitle
+          -
+            handle: group_image
+            field:
+              container: assets
+              type: assets
+              display: 'Group Image'
+              max_files: 1
+          -
+            handle: welcome
+            field:
+              type: markdown
+              display: Welcome
+          -
+            handle: new_logo
+            field:
+              container: assets
+              type: assets
+              display: 'New Logo'
+              width: 50
+              max_files: 1
+          -
+            handle: old_logo
+            field:
+              container: assets
+              type: assets
+              display: 'Old Logo'
+              width: 50
+              max_files: 1
+          -
+            handle: replicator_1
+            field:
+              type: replicator
+              display: 'Replicator 1'
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    section_1:
+                      display: 'Section 1'
+                      fields:
+                        -
+                          handle: section_1_image_title
+                          field:
+                            type: text
+                            display: 'Section 1 Image Title'
+                        -
+                          handle: section_1_image
+                          field:
+                            max_files: 1
+                            container: assets
+                            type: assets
+                            display: 'Section 1 Image'
+                        -
+                          handle: section_1_description
+                          field:
+                            type: markdown
+                            display: 'Section 1 Description'
+          -
+            handle: interview_preview
+            field:
+              collections:
+                - interview
+              type: entries
+              display: 'Interview Preview'
+          -
+            handle: replicator_2
+            field:
+              type: replicator
+              display: 'Replicator 2'
+              sets:
+                new_set_group:
+                  display: 'New Set Group'
+                  sets:
+                    new_set:
+                      display: 'New Set'
+                      fields:
+                        -
+                          handle: section_2_image
+                          field:
+                            max_files: 1
+                            container: assets
+                            type: assets
+                            display: 'Section 2 Image'
+                        -
+                          handle: section_2_title
+                          field:
+                            type: text
+                            display: 'Section 2 Title'
+                        -
+                          handle: section_2_description
+                          field:
+                            type: markdown
+                            display: 'Section 2 Description'
+          -
+            handle: bottom_text_1
+            field:
+              type: text
+              display: 'Bottom Text 1'
+              width: 50
+          -
+            handle: bottom_text_2
+            field:
+              type: text
+              display: 'Bottom Text 2'
+              width: 50
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - pages
+              max_items: 1
+              listable: false
+              localizable: true

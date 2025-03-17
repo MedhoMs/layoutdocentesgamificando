@@ -1,0 +1,65 @@
+<div>
+    <div class="flex items-center flex-col pt-4 bg-[#1681f5] text-white font-bold">
+        <a href="/recursos/concursos">
+            <h1 class="text-3xl pb-3">Concursos</h1>
+        </a>
+    </div>
+
+    <div class="bg-[#11375f] text-center text-white py-5">
+        <h1 class="text-3xl font-bold">{{ title }}</h1>
+        <h3 class="font-semibold mt-3">{{ description }}</h3>
+    </div>
+
+    <div class="flex justify-center gap-[60px] font-medium">
+        <div>
+            <p class=" text-orange-400 text-lg">Autoría</p>
+            <p>{{ autoria }}</p>
+        </div>
+        <div>
+            <p class="text-orange-400 text-lg">Otras atribuciones</p>
+            <p>{{ otras_atribuciones }}</p>
+        </div>
+        {{ if language_tags }}
+            <div>
+                <p class="text-orange-400 text-lg">Idioma</p>
+                {{ language_tags }}
+                    <a href="">{{ title }}</a>
+                {{ /language_tags }}
+            </div>
+        {{ /if }}
+        <div>
+            <p class="text-orange-400 text-lg">Nivel</p>
+            <p>{{ nivel }}</p>
+        </div>
+    </div>
+
+    <div class="bg-[#1681f5] mt-3">
+        <div class="max-w-3xl mx-auto py-2 font-medium">
+            <div class=" text-gray-600 mb-2">
+                <h3 class="text-black mb-2">Contenidos que se trabajan</h3>
+                {{ contenidos }}
+            </div>
+            {{ if consideraciones }}
+            <div class=" text-gray-600 mb-2">
+                <h3 class="text-black mb-2">Consideraciones de atención a a diversidad</h3>
+                {{ consideraciones }}
+            </div>
+            {{ /if }}
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto p-3">
+        {{ genially }}
+    </div>
+
+
+    <div class="grid grid-cols-3 max-w-3xl mx-auto gap-4 mb-7 pt-10">
+        {{ collection:contest limit="3" }}
+        <div>
+            <a href="{{ url }}">
+                <img src="{{ contest_image }}" class="rounded-lg">
+            </a>
+        </div>
+        {{ /collection:contest }}
+    </div>
+</div>

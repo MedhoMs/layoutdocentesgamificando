@@ -1,0 +1,21 @@
+title: Contest
+template: contest/show
+layout: layout
+mount: 516ad835-6922-4727-a32d-cd0296a8aeb5
+taxonomies:
+  - tags
+  - language_tags
+revisions: false
+route: '/{mount}/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
+structure:
+  root: false
+  max_depth: 1

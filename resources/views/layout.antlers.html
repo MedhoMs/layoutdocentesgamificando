@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ title ?? site:name }}</title>
+        {{ vite src="resources/js/site.js|resources/css/site.css" }}
+    </head>
+
+    <body class="bg-gray-100 font-sans leading-normal text-gray-800">
+      <div class="flex flex-col justify-between min-h-[100vh]">
+        <header class="flex flex-col items-center md:flex-row bg-[#092c53] border-b-[3px] border-[#a05211] border-solid pb-2">
+          <a href="/">
+            <img src="/img/docentes-gamificando.png" alt="Docentes Gamificando" class="w-96 mt-7">
+          </a>
+        
+          {{ nav:collection:pages }}
+            {{ if ! children }}
+            <div>
+              <a href="{{ url }}" class="inline-block px-4 hover:text-[#f79502] transition-all ease-in-out text-white font-bold text-xl">{{ title }}</a>
+            </div>
+
+            {{ else }}
+            <div class="relative group">
+              <span class="px-4 cursor-pointer text-white font-bold text-xl">{{ title }} ▼</span>
+              <div class="absolute left-0 hidden md:bg-white md:text-black group-hover:block hover:transition-all ease-in-out w-48 shadow-lg rounded-md z-40">
+                
+                {{ children }}
+                  <a href="{{ url }}" class="block px-4 py-2 hover:bg-[#f79502] hover:text-white hover:transition-all ease-in-out font-bold hover:rounded-md">{{ title }}</a>
+                {{ /children }}
+
+              </div>
+            </div>
+            {{ /if }}
+          {{ /nav:collection:pages }}
+          <form action="/search">
+            <input type="search" name="q" value="{{ get:q }}" class="border-2 border-black outline-none px-2 h-8 rounded-none placeholder-white font-bold text-white ml-4 bg-[#1d4b80]" placeholder="Buscar" autocomplete="off">
+          </form>
+        </header>
+          
+          <section>
+            {{ template_content }}
+          </section>
+        
+          <footer class="">
+            <div>
+                <p class="bg-neutral-700 text-white text-center py-7 mb-0">Copyright © {{ now format="Y" }} Docentes Gamificando | Desarrollado por <a href="https://github.com/MedhoMs" class="hover:text-blue-500 font-bold">Daniel Bucaloiu</a> y <a href="https://github.com/Airamfuentes" class="hover:text-blue-500 font-bold">Airam Fuentes</a></p>
+            </div>
+            <div class="bg-neutral-800 text-neutral-400 py-2 mt-0 text-center">
+                <a href="https://www.aepd.es/politica-de-privacidad-y-aviso-legal" class="mx-2 hover:text-white">Aviso Legal</a>
+                <a href="https://www.aepd.es/politica-de-privacidad-y-aviso-legal" class="mx-2 hover:text-white">Política de Privacidad</a>
+            </div>
+        </footer>
+      </div>
+    </body>
+</html>
